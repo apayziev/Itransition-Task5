@@ -1,6 +1,6 @@
 # Weyland-Yutani Mining Analytics Dashboard
 
-**Author:** Asliddin Payziev
+**Author:** Abdulkhay Payziev
 
 ## 🔗 Links
 
