@@ -43,11 +43,16 @@ function App() {
     <div className="app">
       <header>
         <h1>Weyland-Yutani Mining Analytics</h1>
-        {lastUpdated && (
-          <span className="last-updated">
-            Updated {lastUpdated.toLocaleTimeString()}
-          </span>
-        )}
+        <div className="header-links">
+          <a href="https://github.com/apayziev/Itransition-Task5" target="_blank" rel="noopener noreferrer" className="header-link">
+            GitHub
+          </a>
+          {lastUpdated && (
+            <span className="last-updated">
+              Updated {lastUpdated.toLocaleTimeString()}
+            </span>
+          )}
+        </div>
       </header>
 
       <main>

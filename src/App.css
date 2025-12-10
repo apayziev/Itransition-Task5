@@ -34,6 +34,24 @@ header {
 }
 
 header h1 { font-size: 16px; font-weight: 600; }
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-link {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
 .last-updated { font-size: 12px; color: var(--text-secondary); }
 
 /* Layout */
