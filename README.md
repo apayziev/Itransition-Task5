@@ -7,7 +7,7 @@
 | Resource | URL |
 |----------|-----|
 | **Live Dashboard** | [https://apayziev.github.io/Itransition-Task5/](https://apayziev.github.io/Itransition-Task5/) |
-| **Google Spreadsheet** | [WY Resource Generator](https://docs.google.com/spreadsheets/d/e/2PACX-1vR84zoYulxjiNgg4OXS4Lypvxdf5VDnkOe6o8B5W_tJrSnlxENCPqAOAb9VLaLaK42itlyZub0scZ9_/pubhtml) |
+| **Google Spreadsheet** | [WY Resource Generator](https://docs.google.com/spreadsheets/d/1Ee6dLCeWxLQAkhj0JBtaOAyKjwpmZs6fdCGpPzZo1mc/edit?usp=sharing) |
 | **GitHub Repository** | [https://github.com/apayziev/Itransition-Task5](https://github.com/apayziev/Itransition-Task5) |
 
 ## 📋 Project Overview
