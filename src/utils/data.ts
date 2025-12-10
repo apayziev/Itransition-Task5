@@ -13,8 +13,38 @@ interface RawRow {
 }
 
 export async function fetchSheetData(): Promise<MineData[]> {
-  const response = await fetch(CONFIG.SHEET_URL);
-  const csvText = await response.text();
+  // Try direct fetch first, then fallback to CORS proxy
+  let csvText: string;
+  
+  try {
+    const response = await fetch(CONFIG.SHEET_URL, {
+      mode: 'cors',
+      credentials: 'omit',
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    
+    csvText = await response.text();
+    
+    // Check if we got HTML instead of CSV (redirect issue)
+    if (csvText.trim().startsWith('<!DOCTYPE') || csvText.trim().startsWith('<html')) {
+      throw new Error('Received HTML instead of CSV');
+    }
+  } catch (error) {
+    console.warn('Direct fetch failed, trying CORS proxy...', error);
+    
+    // Fallback to CORS proxy
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(CONFIG.SHEET_URL)}`;
+    const response = await fetch(proxyUrl);
+    
+    if (!response.ok) {
+      throw new Error(`Proxy fetch failed: HTTP ${response.status}`);
+    }
+    
+    csvText = await response.text();
+  }
   
   const { data } = Papa.parse<RawRow>(csvText, {
     header: true,
